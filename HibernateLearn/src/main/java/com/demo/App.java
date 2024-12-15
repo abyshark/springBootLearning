@@ -1,14 +1,14 @@
 package com.demo;
 
-/**
- * Hello world!
- *
- */
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        System.out.println("Test git hub account connection!!!");
+        System.out.println( "Hibernate Project started..." );
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
+        System.out.println(factory);
     }
 }
