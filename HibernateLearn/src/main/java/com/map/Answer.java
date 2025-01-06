@@ -3,7 +3,7 @@ package com.map;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +20,9 @@ public class Answer {
 	private int answerId;
 	private String ans;
 	
-	@OneToOne(mappedBy = "answer")
+//	@OneToOne(mappedBy = "answer")
+//	Question question;
+	
+	@ManyToOne
 	Question question;
 }
