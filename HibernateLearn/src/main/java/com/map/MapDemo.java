@@ -76,7 +76,7 @@ public class MapDemo {
 //		s.save(ans2);
 //		s.save(q1);
 //		s.save(q2);
-		
+//		
 //		s.save(q1);
 //		s.save(q2);
 //		
@@ -85,26 +85,38 @@ public class MapDemo {
 //		s.save(ans3);
 //		s.save(ans4);
 //		s.save(ans5);
-//		
 		
-		tx.commit();
+		
+//		tx.commit();
 		
 		
 		//fetching...
 		
-//		Question newQ = s.get(Question.class, 212);
-//		System.out.println(newQ.getQuestion());
+		Question newQ = s.get(Question.class, 216);
+		System.out.println(newQ.getQuestion());
 //		System.out.println(newQ.getAnswer().getAns());
-		
-		Question q = s.get(Question.class, 216);
-		System.out.println(q.getQuestion());
-		
-		for(Answer ans : q.getAnswers()) {
+//		
+//		Question q = s.get(Question.class, 216);
+//		System.out.println(q.getQuestion());
+//		
+		System.out.println();
+		System.out.println("Lazy loading!!!");
+		for(Answer ans : newQ.getAnswers()) {
 			System.out.println(ans.getAns());
 		}
 		
+		System.out.println();
+		System.out.println("Eager Loading!!!");
+		Question newQ1 = s.get(Question.class, 216);
+		System.out.println(newQ1.getQuestion());
+		
 		s.close();
 		factory.close();
+		
+		/*
+		 * lazy loading : things get load when get method is called 
+		 * eager Loading: things get load when we call them at the same time 
+		 */
 	}
 
 }

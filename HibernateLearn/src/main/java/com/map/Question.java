@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -23,7 +24,11 @@ public class Question {
 //	@JoinColumn(name = "a_id")
 //	private Answer answer;
 	
-	@OneToMany(mappedBy = "question")
+	/*
+	 * Eager loading to fetch the data at the time of call only 
+	 * and does not need get method to call this col at the time of get method call on the class.
+	 */
+	@OneToMany(mappedBy = "question",fetch = FetchType.EAGER)
 //	@JoinColumn(name = "a_id")
 	private List<Answer> answers;
 	
