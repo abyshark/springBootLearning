@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>SaveNoteServlet</servlet-name>
+  	<display-name>SaveNoteServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlet.SaveNoteServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SaveNoteSevlet</servlet-name>
+  	<display-name>SaveNoteSevlet</display-name>
+  	<description></description>
+  	<servlet-class>com.servlets.SaveNoteSevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SaveNoteServlet</servlet-name>
+  	<url-pattern>/SaveNoteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SaveNoteSevlet</servlet-name>
+  	<url-pattern>/SaveNoteSevlet</url-pattern>
+  </servlet-mapping>
 </web-app>
