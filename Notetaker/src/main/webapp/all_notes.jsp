@@ -24,7 +24,19 @@
 	Query q = s.createQuery("from Note");
 	List<Note> list = q.list();
 	for(Note note: list){
-		out.println(note.getId()+" : "+note.getTitle()+":                 "+note.getContent() +"<br>");
+		
+	%>
+	<div class="card mt-3">
+  <img class="card-img-top m-4" style="max-width:100px" src="img/post-it.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><%= note.getTitle() %></h5>
+    <p class="card-text">
+    <%= note.getContent()  %>
+    </p>
+    <a href="#" class="btn btn-danger">Delete</a>
+  </div>
+</div>
+	<%
 	}
 	
 	s.close();
