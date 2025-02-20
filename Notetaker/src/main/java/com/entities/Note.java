@@ -3,6 +3,7 @@ package com.entities;
 import java.util.Date;
 import java.util.Random;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,6 +20,7 @@ public class Note {
 	@Id
 	private int id;
 	private String title;
+	@Column(length = 150)
 	private String content;
 	private Date addedDate;
 	/**
@@ -34,6 +36,5 @@ public class Note {
 		this.content = content;
 		this.addedDate = addedDate;
 	}
-	
-	
+		
 }

@@ -16,12 +16,24 @@
 		<!-- This is form -->
 		<form action="SaveNoteServlet" method="post">
 			<div class="mb-3" p-1>
-				<label for="title" class="form-label">Note Title</label> <input required="true" type="text" class="form-control"
-					id="title" placeholder="Enter Here" aria-describedby="emailHelp">
+				<label for="title" class="form-label">Note Title</label> 
+				<input 
+				name="title"
+				required
+				type="text" 
+				class="form-control"
+				id="title" 
+				placeholder="Enter Here" 
+				aria-describedby="emailHelp">
 			</div>
 			<div class="mb-3">
 				<label for="content" class="form-label">Note Content</label>
-				<textarea required="required" rows="" cols="" id="content" placeholder="Enter the content here" class="form-control"
+				<textarea 
+				name="content"
+				placeholder="Enter the content here" 
+				required="required" 
+				id="content"
+				class="form-control"
 				style="height: 150px">
 				</textarea>
 			</div>
