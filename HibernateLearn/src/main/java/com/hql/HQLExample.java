@@ -23,9 +23,12 @@ public class HQLExample {
 		//HQL
 		//Syntax
 		String query= "from Student";
-		String query1= "from Student where city = 'LKO'";
+		
+		String query1= "from Student where city=:x";
 		Query q = s.createQuery(query);
 		Query q1 = s.createQuery(query1);
+		
+		q1.setParameter("x", "LKO");
 		
 		List<Student> list = q.list();
 		for(Student student : list) {
