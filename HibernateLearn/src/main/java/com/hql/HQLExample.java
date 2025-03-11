@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.demo.Student;
@@ -41,7 +42,24 @@ public class HQLExample {
 			System.out.println(student1.getName()+" "+student1.getCity());
 		}
 		
+		System.out.println("__________________________________________");
+		Transaction tx =s.beginTransaction();
+		//Delete query 
+		Query q2 = s.createQuery("delete from Student s where s.city=:c");
+		q2.setParameter("c", "Jaipur");
+		int r = q2.executeUpdate();
+		System.out.println("Deleted: ");
+		System.out.println(r);
 		
+		//update query 
+		Query q3 = s.createQuery("update Student s set s.city=:c where s.name=:n  ");
+		q3.setParameter("c","Jaipur");
+		q3.setParameter("n","Sam");
+		int r1 = q3.executeUpdate();
+		System.out.println("Updated DB!!!");
+		System.out.println(r1);
+		
+		tx.commit();
 		s.close();
 		factory.close();
 		
