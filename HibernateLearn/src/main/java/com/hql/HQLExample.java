@@ -1,5 +1,6 @@
 package com.hql;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -50,6 +51,7 @@ public class HQLExample {
 		int r = q2.executeUpdate();
 		System.out.println("Deleted: ");
 		System.out.println(r);
+		System.out.println("__________________________________________");
 		
 		//update query 
 		Query q3 = s.createQuery("update Student s set s.city=:c where s.name=:n  ");
@@ -58,7 +60,17 @@ public class HQLExample {
 		int r1 = q3.executeUpdate();
 		System.out.println("Updated DB!!!");
 		System.out.println(r1);
+		System.out.println("__________________________________________");
 		
+//how to execute join query in HQL 
+		
+		Query q4 = s.createQuery("select q.questionId,q.question,a.ans from Question q INNER JOIN q.answers as a");
+		List<Object []> list2=q4.getResultList();
+		for(Object[] arr: list2) {
+			System.out.println(Arrays.toString(arr));
+		}
+		
+		System.out.println("__________________________________________");
 		tx.commit();
 		s.close();
 		factory.close();
