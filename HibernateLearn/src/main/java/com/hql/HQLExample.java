@@ -13,6 +13,7 @@ import com.demo.Student;
 
 public class HQLExample {
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 
 		Configuration cfg = new Configuration();
