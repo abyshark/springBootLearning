@@ -9,6 +9,7 @@ import org.hibernate.query.Query;
 
 import com.demo.Student;
 
+
 public class HQLPagination {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
