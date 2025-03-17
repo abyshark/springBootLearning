@@ -2,6 +2,7 @@ package com.map;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,7 +29,7 @@ public class Question {
 	 * Eager loading to fetch the data at the time of call only 
 	 * and does not need get method to call this col at the time of get method call on the class.
 	 */
-	@OneToMany(mappedBy = "question",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "question",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 //	@JoinColumn(name = "a_id")
 	private List<Answer> answers;
 	
