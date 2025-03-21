@@ -1,6 +1,7 @@
 package com.demo.array;
 
 import java.util.ArrayList;
+import java.util.Stack;
 import java.util.Vector;
 
 public class LearnArrayList {
@@ -13,8 +14,17 @@ public class LearnArrayList {
 
         ArrayList<String> arrayList2 = new ArrayList<>();
 
+        //Vector
         Vector v = new Vector();
         Vector vc = new Vector(60);
+
+        //Stack
+        Stack<Integer>stack = new Stack<>();
+
+        stack.push(1);
+        stack.push(23);
+
+        Object obj= stack.pop();
 
 
     }
